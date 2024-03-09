@@ -3,7 +3,7 @@ let sumar = document.getElementById("btn-sumar");
 let restar = document.getElementById("btn-restar");
 
 
-// Funcion que valida si es un numero
+// Funcion que valida si es un número
 
 const esNumero = (numeroUsado) => {
     // "Cualquier número que parta o no con un signo negativo seguido por un número y termine en número"
@@ -12,6 +12,14 @@ const esNumero = (numeroUsado) => {
     } else {
         return false;
     }
+}
+
+// Funcion que limpia values y resultado
+
+const limpiador = () => {
+    document.querySelector("#valor1").value = "";
+    document.querySelector("#valor2").value = "";
+    document.querySelector(".resultado").innerHTML = "";
 }
 
 // Funcion sumar
@@ -34,9 +42,7 @@ const sumaNumeros = () => {
         document.querySelector(".resultado").innerHTML = resultado;
     } else {
         alert(`Solo usar números!`);
-        document.querySelector("#valor1").value = "";
-        document.querySelector("#valor2").value = "";
-        document.querySelector(".resultado").innerHTML = "";
+        limpiador();
     }
 }
 
@@ -60,9 +66,7 @@ const restaNumeros = () => {
         ;
     } else{
         alert(`Solo usar números!`);
-        document.querySelector("#valor1").value = "";
-        document.querySelector("#valor2").value = "";
-        document.querySelector(".resultado").innerHTML = "";
+        limpiador();
     }
 }
 
